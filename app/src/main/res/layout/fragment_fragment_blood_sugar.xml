@@ -1,0 +1,50 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lhu.user.familycare.Fragment_blood_sugar">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/IMG_blood_sugar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="81dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_height="40dp"
+            android:ems="10"
+            android:id="@+id/ET_blood_sugar"
+            android:layout_width="200dp"
+            android:inputType="number"
+            android:layout_alignBottom="@+id/IMG_blood_sugar"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:id="@+id/IMG_btn_before_dinner"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="61dp"
+            android:layout_below="@+id/IMG_blood_sugar"
+            android:layout_alignRight="@+id/ET_blood_sugar"
+            android:layout_alignEnd="@+id/ET_blood_sugar" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:id="@+id/IMG_btn_after_dinner"
+            android:layout_alignTop="@+id/IMG_btn_before_dinner"
+            android:layout_alignLeft="@+id/ET_blood_sugar"
+            android:layout_alignStart="@+id/ET_blood_sugar" />
+
+    </RelativeLayout>
+</FrameLayout>

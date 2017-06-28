@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_body_input_value"
+    tools:context="com.lhu.user.familycare.Body_inputValue">
+
+    <ImageView
+        android:id="@+id/bg_inputValue"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="33dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="39dp">
+
+            <ImageView
+                android:id="@+id/body_btn_blood_pressure"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+
+            <ImageView
+                android:id="@+id/body_btn_blood_sugar"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/activity_body_input_value"
+                android:layout_marginLeft="111dp"
+                android:layout_marginStart="111dp" />
+
+        </RelativeLayout>
+
+
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.lhu.user.familycare.Fragment_blood_pressure"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/activity_body_input_value"
+            android:layout_marginTop="11dp"
+            tools:layout="@layout/fragment_fragment_blood_sugar" />
+
+        <ImageView
+            android:id="@+id/IMG_btn_OK"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:clickable="true" />
+    </RelativeLayout>
+
+
+</FrameLayout>

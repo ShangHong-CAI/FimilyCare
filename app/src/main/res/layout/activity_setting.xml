@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/activity_setting"
+    android:layout_height="match_parent"
+    tools:context="com.lhu.user.familycare.Setting">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/setting" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+        <TextView
+            android:text="身高："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="86dp"
+            android:id="@+id/TV_bodytall"
+            android:textSize="30sp"
+            android:textColor="@android:color/black"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="緊急連絡人電話："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:id="@+id/TV_SOS_phone"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/TV_SOS_Name"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="家裡地址"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_SOS_Name"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:text="體重："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/TV_weight"
+            android:textSize="30sp"
+            android:textColor="@android:color/black"
+            android:layout_below="@+id/TV_bodytall"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="24dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="數字"
+            android:ems="10"
+            android:id="@+id/ET_bodytail"
+            android:layout_alignTop="@+id/TV_bodytall"
+            android:layout_toRightOf="@+id/TV_bodytall"
+            android:layout_alignBottom="@+id/TV_bodytall" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:text="數字"
+            android:ems="10"
+            android:layout_alignTop="@+id/TV_weight"
+            android:layout_toRightOf="@+id/TV_bodytall"
+            android:layout_toEndOf="@+id/TV_bodytall"
+            android:id="@+id/ET_weight"
+            android:layout_alignBottom="@+id/TV_weight" />
+
+        <EditText
+            android:text="住址："
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/HOME_address"
+            android:layout_below="@+id/TV_weight"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="14dp"
+            android:textSize="30sp"
+            android:textColor="@android:color/black" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:layout_alignTop="@+id/ET_address"
+            android:layout_alignRight="@+id/ET_weight"
+            android:layout_alignEnd="@+id/ET_weight"
+            android:id="@+id/ET_address" />
+
+        <AutoCompleteTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="Name"
+            android:ems="10"
+            android:layout_alignTop="@+id/TV_SOS_Name"
+            android:layout_toRightOf="@+id/TV_SOS_Name"
+            android:layout_toEndOf="@+id/TV_SOS_Name"
+            android:id="@+id/ET_SOS_name" />
+
+        <AutoCompleteTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:ems="10"
+            android:layout_alignTop="@+id/TV_SOS_phone"
+            android:layout_toRightOf="@+id/TV_SOS_phone"
+            android:layout_toEndOf="@+id/TV_SOS_phone"
+            android:id="@+id/ET_SOS_phone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ET_SOS_phone">
+
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="40dp"
+                android:alpha="0"
+                android:onClick="onClick"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="23dp"
+                android:id="@+id/S_save" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</FrameLayout>

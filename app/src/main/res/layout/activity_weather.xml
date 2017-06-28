@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_weathr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/weather"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.lhu.user.familycare.Weather">
+
+    <TextView
+        android:text="地區"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="11dp"
+        android:id="@+id/TXTV_region"
+        android:textSize="24sp"
+        android:layout_alignRight="@+id/IMG_W_Now"
+        android:layout_alignEnd="@+id/IMG_W_Now"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="時間"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/TXTV_time"
+        android:textSize="18sp"
+        android:layout_below="@+id/TXTV_region"
+        android:layout_alignLeft="@+id/TXTV_region"
+        android:layout_alignStart="@+id/TXTV_region"
+        android:layout_alignRight="@+id/TXTV_region"
+        android:layout_alignEnd="@+id/TXTV_region"
+        android:textColor="@android:color/black" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/weather_sunny"
+        android:id="@+id/IMG_W_Now"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/TXTV_time"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:text="提示"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TXTV_hint"
+        android:layout_below="@+id/IMG_W_Now"
+        android:layout_alignLeft="@+id/IMG_W_Now"
+        android:layout_alignStart="@+id/IMG_W_Now"
+        android:layout_marginTop="11dp"
+        android:layout_alignRight="@+id/IMG_W_Now"
+        android:layout_alignEnd="@+id/IMG_W_Now"
+        android:textColor="@android:color/black" />
+
+    <ImageView
+        app:srcCompat="@drawable/weather_partly_cloudy"
+        android:id="@+id/IMG_W_time1"
+        android:layout_marginBottom="49dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/TXTV_Now"
+        android:layout_alignStart="@+id/TXTV_Now" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/weather_cloudy"
+        android:layout_alignTop="@+id/IMG_W_time1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/IMG_W_time2" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/weather_rain"
+        android:layout_alignTop="@+id/IMG_W_time2"
+        android:layout_alignRight="@+id/IMG_W_Now"
+        android:layout_alignEnd="@+id/IMG_W_Now"
+        android:id="@+id/IMG_W_time3" />
+
+    <TextView
+        android:text="溫度\n時間"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/IMG_W_time1"
+        android:layout_alignStart="@+id/IMG_W_time1"
+        android:id="@+id/TXTV_W_time1"
+        android:layout_below="@+id/IMG_W_time2"
+        android:layout_alignRight="@+id/IMG_W_time1"
+        android:layout_alignEnd="@+id/IMG_W_time1"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/IMG_W_time2"
+        android:layout_alignEnd="@+id/IMG_W_time2"
+        android:id="@+id/TXT_W_time2"
+        android:layout_below="@+id/IMG_W_time2"
+        android:layout_alignLeft="@+id/IMG_W_time2"
+        android:layout_alignStart="@+id/IMG_W_time2"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/IMG_W_time3"
+        android:layout_alignEnd="@+id/IMG_W_time3"
+        android:id="@+id/TXTV_W_time3"
+        android:layout_below="@+id/IMG_W_time3"
+        android:layout_alignLeft="@+id/IMG_W_time3"
+        android:layout_alignStart="@+id/IMG_W_time3"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:text="溫度"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TXTV_Now"
+        android:textSize="25sp"
+        android:layout_alignTop="@+id/IMG_W_Now"
+        android:layout_toLeftOf="@+id/IMG_W_Now"
+        android:layout_toStartOf="@+id/IMG_W_Now"
+        android:layout_marginTop="11dp"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <TextView
+        android:text="天氣說明\n降雨機率"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/TXTV_info"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:layout_below="@+id/TXTV_Now"
+        android:layout_toLeftOf="@+id/IMG_W_Now"
+        android:layout_alignLeft="@+id/TXTV_Now"
+        android:layout_alignStart="@+id/TXTV_Now"
+        android:textColor="@android:color/black" />
+</RelativeLayout>

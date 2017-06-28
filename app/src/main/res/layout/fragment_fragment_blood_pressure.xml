@@ -1,0 +1,58 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lhu.user.familycare.Fragment_blood_pressure">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:id="@+id/IMG_pressure"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_height="200dp" />
+
+        <EditText
+            android:inputType="number"
+            android:ems="10"
+            android:layout_marginTop="23dp"
+            android:layout_marginRight="69dp"
+            android:layout_marginEnd="69dp"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/ET_Systolic_blood_pressure" />
+
+        <EditText
+            android:layout_height="40dp"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_below="@+id/ET_Diastolic_blood_pressure"
+            android:layout_alignRight="@+id/ET_Diastolic_blood_pressure"
+            android:layout_alignEnd="@+id/ET_Diastolic_blood_pressure"
+            android:layout_marginTop="15dp"
+            android:id="@+id/ET_heartbeat"
+            android:layout_width="200dp" />
+
+        <EditText
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:layout_marginTop="12dp"
+            android:id="@+id/ET_Diastolic_blood_pressure"
+            android:inputType="number"
+            android:layout_below="@+id/ET_Systolic_blood_pressure"
+            android:layout_alignLeft="@+id/ET_Systolic_blood_pressure"
+            android:layout_alignStart="@+id/ET_Systolic_blood_pressure" />
+
+    </RelativeLayout>
+
+</FrameLayout>
