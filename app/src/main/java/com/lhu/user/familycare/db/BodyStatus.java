@@ -81,4 +81,14 @@ public class BodyStatus{
     public void setUpdate(boolean update) {
         isUpdate = update;
     }
+
+    @Override
+    public String toString() {
+        return  "資料時間='" + Date + '\'' +
+                ", 使用者ID='" + Mid + '\'' +
+                ", 心跳=" + Heartbeat + '\'' +
+                ", 舒張壓=" + SystolicBloodPressure + '\'' +
+                ", 收張壓=" + DiastolicBloodPressure + '\'' +
+                ", 血糖=" + BloodSugar + '\'';
+    }
 }

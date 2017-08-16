@@ -16,7 +16,7 @@ import com.lhu.user.familycare.tool.IMGtool;
 import java.io.IOException;
 import java.util.List;
 
-public class SOS extends AppCompatActivity {
+public class SOSActivity extends AppCompatActivity {
     private Context context;
     private ImageView IMG_take_me_home,IMG_help_phone,bg_sos;
     private SharedPreferences preferences;
@@ -49,7 +49,7 @@ public class SOS extends AppCompatActivity {
                     startActivity(i);
                 }else {
                     Intent intent = new Intent();
-                    intent.setClass(this,Setting.class);
+                    intent.setClass(this,SettingActivity.class);
                     startActivity(intent);
                 }
                 break;
@@ -64,7 +64,7 @@ public class SOS extends AppCompatActivity {
                     startActivity(intent);
                 }else{
                     Intent intent = new Intent();
-                    intent.setClass(this,Setting.class);
+                    intent.setClass(this,SettingActivity.class);
                     startActivity(intent);
                 }
                 break;

@@ -1,91 +1,68 @@
 package com.lhu.user.familycare;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.lhu.user.familycare.db.BodyStatus;
+import com.lhu.user.familycare.db.BodyStatusDAO;
+import com.lhu.user.familycare.db.UserDAO;
 import com.lhu.user.familycare.tool.IMGtool;
 
-public class Body_inputValue extends FragmentActivity implements View.OnClickListener {
+import java.text.SimpleDateFormat;
+
+public class Body_inputValue extends Activity  {
     private Context context;
-    private int address = 1;
-    private Fragment fragmentBloodSugar, fragmentBloodPressure;
-    private ImageView body_btn_blood_pressure, body_btn_blood_sugar;
+    private EditText bloodsugar_editText,heartbeat_editText,diastolicBloodPressure_editText,systolicBloodPressure_editText;
+    private BodyStatusDAO bodyStatusDAO;
+    private UserDAO userDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_body_input_value);
+        setContentView(R.layout.activity_body_input_value2);
         context = this;
+        bodyStatusDAO = new BodyStatusDAO(context);
+        userDAO = new UserDAO(context);
         findView();
-        creatFragment();
+//        creatFragment();
     }
 
     public void findView() {
-        body_btn_blood_pressure = (ImageView) findViewById(R.id.body_btn_blood_pressure);
-        body_btn_blood_sugar = (ImageView) findViewById(R.id.body_btn_blood_sugar);
-        body_btn_blood_pressure.setImageBitmap(IMGtool.readBitMap(context, R.drawable.body_btn_blood_pressure_y));
-        body_btn_blood_sugar.setImageBitmap(IMGtool.readBitMap(context, R.drawable.body_btn_blood_sugar_n));
-        body_btn_blood_pressure.setOnClickListener(this);
-        body_btn_blood_sugar.setOnClickListener(this);
-
-
-        ImageView bg_inputValue = (ImageView) findViewById(R.id.bg_inputValue);
-        bg_inputValue.setImageBitmap(IMGtool.readBitMap(context, R.drawable.bodyinfo));
+        bloodsugar_editText = (EditText) findViewById(R.id.bloodsugar_editText);
+        heartbeat_editText = (EditText) findViewById(R.id.heartbeat_editText);
+        diastolicBloodPressure_editText = (EditText) findViewById(R.id.diastolicBloodPressure_editText);
+        systolicBloodPressure_editText = (EditText) findViewById(R.id.systolicBloodPressure_editText);
         ImageView img_btn_OK = (ImageView) findViewById(R.id.IMG_btn_OK);
         img_btn_OK.setImageBitmap(IMGtool.readBitMap(context, R.drawable.ok));
         img_btn_OK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                float bloodsugar,heartbeat,diastolicBloodPressure,systolicBloodPressure;
+                bloodsugar =Float.parseFloat(bloodsugar_editText.getText().toString());
+                heartbeat =Float.parseFloat(heartbeat_editText.getText().toString());
+                diastolicBloodPressure =Float.parseFloat(diastolicBloodPressure_editText.getText().toString());
+                systolicBloodPressure =Float.parseFloat(systolicBloodPressure_editText.getText().toString());
+                insert(heartbeat,systolicBloodPressure,diastolicBloodPressure,bloodsugar);
                 Intent intent = new Intent();
                 intent.setClass(Body_inputValue.this, Body_info.class);
                 startActivity(intent);
                 finish();
             }
         });
+//        ImageView bg_inputValue = (ImageView) findViewById(R.id.bg_inputValue);
+//        bg_inputValue.setImageBitmap(IMGtool.readBitMap(context, R.drawable.bodyinfo));
+
+    }
+    private void insert(float heartbeat,float systolicBloodPressure,float diastolicBloodPressure,float bloodSugar){
+        SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        String date = sDateFormat.format(new java.util.Date());
+        BodyStatus bodyStatus = new BodyStatus(date,userDAO.getUser().getName(),heartbeat,systolicBloodPressure,diastolicBloodPressure,bloodSugar,false);
+        bodyStatusDAO.insert(bodyStatus);
     }
 
-    public void creatFragment() {
-        fragmentBloodPressure = new Fragment_blood_pressure();
-        fragmentBloodSugar = new Fragment_blood_sugar();
-        FragmentManager fragmentMgr = getFragmentManager();
-        FragmentTransaction fragmentTrans = fragmentMgr.beginTransaction();
-        fragmentTrans.add(R.id.fragment, fragmentBloodSugar);
-        fragmentTrans.hide(fragmentBloodSugar);
-        fragmentTrans.add(R.id.fragment, fragmentBloodPressure);
-        fragmentTrans.commit();
-    }
-
-    @Override
-    public void onClick(View view) {
-        FragmentManager fragmentMgr = getFragmentManager();
-        FragmentTransaction fragmentTrans = fragmentMgr.beginTransaction();
-        switch (view.getId()) {
-            case R.id.body_btn_blood_pressure:
-                if (address == 2) {
-                    address = 1;
-                    body_btn_blood_pressure.setImageBitmap(IMGtool.readBitMap(context, R.drawable.body_btn_blood_pressure_y));
-                    body_btn_blood_sugar.setImageBitmap(IMGtool.readBitMap(context, R.drawable.body_btn_blood_sugar_n));
-                    fragmentTrans.show(fragmentBloodPressure);
-                    fragmentTrans.hide(fragmentBloodSugar);
-                }
-                break;
-            case R.id.body_btn_blood_sugar:
-                if (address == 1) {
-                    address = 2;
-                    body_btn_blood_pressure.setImageBitmap(IMGtool.readBitMap(context, R.drawable.body_btn_blood_pressure_n));
-                    body_btn_blood_sugar.setImageBitmap(IMGtool.readBitMap(context, R.drawable.body_btn_blood_sugar_y));
-                    fragmentTrans.hide(fragmentBloodPressure);
-                    fragmentTrans.show(fragmentBloodSugar);
-                }
-                break;
-        }
-        fragmentTrans.commit();
-    }
 }

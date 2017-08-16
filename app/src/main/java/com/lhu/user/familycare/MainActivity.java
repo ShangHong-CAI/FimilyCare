@@ -46,15 +46,15 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent();
         switch (view.getId()){
             case R.id.IMG_SOS:
-                intent.setClass(MainActivity.this,SOS.class);
+                intent.setClass(MainActivity.this,SOSActivity.class);
                 startActivity(intent);
                 break;
             case R.id.IMG_setting:
-                intent.setClass(MainActivity.this,Setting.class);
+                intent.setClass(MainActivity.this,SettingActivity.class);
                 startActivity(intent);
                 break;
             case R.id.IMG_Weather:
-                intent.setClass(MainActivity.this,Weather.class);
+                intent.setClass(MainActivity.this,WeatherActivity.class);
                 startActivity(intent);
                 break;
             case R.id.IMG_Body:

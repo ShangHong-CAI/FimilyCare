@@ -18,19 +18,19 @@
         <activity android:name=".MainActivity"/>
         <activity android:name=".Body_info" />
         <activity android:name=".Body_inputValue" />
-        <activity android:name=".SOS"/>
-        <activity android:name=".Login" >
+        <activity android:name=".SOSActivity"/>
+        <activity android:name=".LoginActivity" >
             <intent-filter>
                         <action android:name="android.intent.action.MAIN" />
                         <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Registered"
+        <activity android:name=".RegisteredActivity"
             android:windowSoftInputMode="adjustPan"/>
-        <activity android:name=".Setting"></activity>
+        <activity android:name=".SettingActivity"></activity>
         <activity android:name=".Body_Inquire"/>
-        <activity android:name=".BodySymptom"/>
-        <activity android:name=".Weather"/>
+        <activity android:name=".BodySymptomActivity"/>
+        <activity android:name=".WeatherActivity"/>
         
 
     </application>

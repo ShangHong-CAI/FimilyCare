@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/activity_sos"
-    tools:context="com.lhu.user.familycare.SOS">
+    tools:context="com.lhu.user.familycare.SOSActivity">
 
     <ImageView
         android:id="@+id/bg_sos"

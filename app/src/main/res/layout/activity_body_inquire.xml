@@ -5,7 +5,6 @@
     android:id="@+id/activity_body__inquire"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     tools:context="com.lhu.user.familycare.Body_Inquire">
 
     <ImageView
@@ -14,10 +13,9 @@
         android:layout_height="match_parent" />
 
     <ListView
+        android:id="@+id/body_quire_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/body_quire_list"/>
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="70dp" />
 </FrameLayout>

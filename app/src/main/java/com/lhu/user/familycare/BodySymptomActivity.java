@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import com.lhu.user.familycare.tool.IMGtool;
 
-public class BodySymptom extends AppCompatActivity {
+public class BodySymptomActivity extends AppCompatActivity {
     private Context context;
     private ImageView bg_bodysymptom,IMG_body;
     @Override

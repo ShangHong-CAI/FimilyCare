@@ -6,8 +6,10 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -16,6 +18,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.squareup.picasso.Picasso;
 
 import java.io.InputStream;
@@ -29,17 +37,20 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-public class Registered extends AppCompatActivity {
+public class RegisteredActivity extends AppCompatActivity {
+    private static final String TAG ="RegisteredActivity.java";
     private EditText ET_account,ET_password,ET_Name;
     private TextView TV_bitrhday;
     private Context context;
     private DatePickerDialog datePickerDialog;
     private TimePickerDialog timePickerDialog;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registered);
         context = this;
+        mAuth = FirebaseAuth.getInstance();
         ImageView imageView = (ImageView)findViewById(R.id.bg_registered);
 //        imageView.setImageBitmap(IMGtool.readBitMap(context,R.drawable.registered));
         Picasso.with(context).load(R.drawable.main).into(imageView);
@@ -63,11 +74,12 @@ public class Registered extends AppCompatActivity {
                 if(TextUtils.isEmpty(account) || TextUtils.isEmpty(password) || TextUtils.isEmpty(bitrhday) || TextUtils.isEmpty(Name)){
                     Toast.makeText(context,"資料不完全",Toast.LENGTH_SHORT).show();
                 }else {
-                    new CheckUser(account).start();
+                    register();
                 }
             }
         });
     }
+
     private void setDatePickerDialog(){
         GregorianCalendar calendar = new GregorianCalendar();
 
@@ -86,20 +98,57 @@ public class Registered extends AppCompatActivity {
         String account = ET_account.getText().toString().trim();
         String password = ET_password.getText().toString().trim();
         String bitrhday = TV_bitrhday.getText().toString().trim();
-        String Name = ET_Name.getText().toString().trim();
-        new RegisterWeb(account,password,bitrhday,Name).start();
+        final String Name = ET_Name.getText().toString().trim();
+        System.out.println("11111111111::::"+account+"|"+password+"|"+Name);
+        mAuth.createUserWithEmailAndPassword(account, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(Name)
+                                    .build();
+
+                            user.updateProfile(profileUpdates)
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Log.d(TAG, "User profile updated.");
+                                            }
+                                        }
+                                    });
+                            Toast.makeText(context,"註冊成功",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent();
+                            intent.setClass(RegisteredActivity.this,LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(RegisteredActivity.this, "Authentication failed.\n"+task.getException().getLocalizedMessage(),
+                                    Toast.LENGTH_SHORT).show();
+
+                        }
+
+                        // ...
+                    }
+                });
     }
     public  void findView(){
-        ET_account = (EditText) findViewById(R.id.ET_account);
-        ET_password = (EditText) findViewById(R.id.ET_password);
-        TV_bitrhday = (TextView)findViewById(R.id.TV_bitrhday);
+        ET_account = (EditText) findViewById(R.id.Registered_ET_account);
+        ET_password = (EditText) findViewById(R.id.Registered_ET_password);
+        TV_bitrhday = (TextView)findViewById(R.id.Registered_TV_bitrhday);
         TV_bitrhday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 datePickerDialog.show();
             }
         });
-        ET_Name = (EditText) findViewById(R.id.ET_Name);
+        ET_Name = (EditText) findViewById(R.id.Registered_ET_Name);
 
     }
     class CheckUser extends Thread{
@@ -170,7 +219,7 @@ class RegisterWeb extends Thread{
             if(result.equals("1")){
                 Toast.makeText(context,"註冊成功",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent();
-                intent.setClass(Registered.this,Login.class);
+                intent.setClass(RegisteredActivity.this,LoginActivity.class);
                 startActivity(intent);
                 finish();
             }else {
@@ -191,7 +240,7 @@ class RegisterWeb extends Thread{
         super.run();
         URL url = null;
         try {
-            String URLSTR = String.format("http://140.131.7.63//family_care/callback/Registered.aspx?M_ID=%s&M_Name=%s&M_Password=%s&M_Birthday=%s",account,Name,password,bitrhday);
+            String URLSTR = String.format("http://140.131.7.63//family_care/callback/RegisteredActivity.aspx?M_ID=%s&M_Name=%s&M_Password=%s&M_Birthday=%s",account,Name,password,bitrhday);
             url = new URL(URLSTR);
             // 替換成 OkHttp 2.0 ---------------------------------------
             Request request = new Request.Builder().url(url).build();

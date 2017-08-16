@@ -32,7 +32,7 @@ import okhttp3.Response;
 
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
-public class Weather extends AppCompatActivity {
+public class WeatherActivity extends AppCompatActivity {
     private LocationManager mLocationManager;
     public static final int LOCATION_UPDATE_MIN_DISTANCE = 10;
     public static final int LOCATION_UPDATE_MIN_TIME = 5000;

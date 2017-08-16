@@ -31,7 +31,7 @@ public class UserDAO {
     public final static String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + " ( " +
                     M_ID + " TEXT PRIMARY KEY, " +
-                    M_Name + " TEXT NOT NULL," +
+                    M_Name + " TEXT NULL," +
                     M_Password+" TEXT NOT NULL,"+
                     M_Birthday+" TEXT NULL,"+
                     M_HomeAddress+" TEXT NULL,"+

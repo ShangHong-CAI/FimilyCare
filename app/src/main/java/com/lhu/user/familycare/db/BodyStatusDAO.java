@@ -39,7 +39,7 @@ public class BodyStatusDAO {
 
     public ArrayList<BodyStatus> getBodyStatuses_List(){
         Cursor cursor = db.query(TABLE_NAME, null, null, null, null, null, null, null);
-        ArrayList<BodyStatus> arrayList = new ArrayList<BodyStatus>();
+        ArrayList<BodyStatus> arrayList = new ArrayList<BodyStatus>(cursor.getCount());
         while(cursor.moveToNext()) {
             arrayList.add(getData(cursor));
         }
@@ -60,7 +60,6 @@ public class BodyStatusDAO {
         db.insert(TABLE_NAME,null,cv);
     }
     private BodyStatus getData(Cursor cursor){
-        if(cursor.moveToFirst()){
             BodyStatus bodyStatus = new BodyStatus();
             bodyStatus.setDate(cursor.getString(0));
             bodyStatus.setMid(cursor.getString(1));
@@ -68,9 +67,6 @@ public class BodyStatusDAO {
             bodyStatus.setSystolicBloodPressure(cursor.getInt(3));
             bodyStatus.setDiastolicBloodPressure(cursor.getInt(4));
             bodyStatus.setBloodSugar(cursor.getInt(5));
-
             return bodyStatus;
-        }
-        return null;
     }
 }

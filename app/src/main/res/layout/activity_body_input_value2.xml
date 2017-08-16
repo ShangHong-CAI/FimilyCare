@@ -26,17 +26,77 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:layout_marginTop="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true">
+            <TextView
+                android:id="@+id/bloodsugar_textView"
+                android:textSize="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="血糖" />
 
+            <EditText
+                android:id="@+id/bloodsugar_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="請輸入血糖" />
+
+            <TextView
+                android:id="@+id/heartbeat_textView"
+                android:layout_width="match_parent"
+                android:textSize="40dp"
+                android:layout_height="wrap_content"
+                android:text="心跳" />
+
+            <EditText
+                android:id="@+id/heartbeat_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="請輸入心跳" />
+            <TextView
+                android:id="@+id/diastolicBloodPressure_textView"
+                android:layout_width="match_parent"
+                android:textSize="40dp"
+                android:layout_height="wrap_content"
+                android:text="收張壓" />
+
+            <EditText
+                android:id="@+id/diastolicBloodPressure_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="請輸入收張壓" />
+            <TextView
+                android:id="@+id/systolicBloodPressure_textView"
+                android:layout_width="match_parent"
+                android:textSize="40dp"
+                android:layout_height="wrap_content"
+                android:text="舒張壓" />
+
+            <EditText
+                android:id="@+id/systolicBloodPressure_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:hint="請輸入舒張壓" />
+
+            <ImageView
+                android:id="@+id/IMG_btn_OK"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:clickable="true" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/IMG_btn_OK"
-            android:layout_width="80dp"
-            android:layout_height="50dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:clickable="true" />
     </RelativeLayout>
 
 

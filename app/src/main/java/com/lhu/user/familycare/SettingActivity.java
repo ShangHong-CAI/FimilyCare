@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import static android.Manifest.permission.READ_CONTACTS;
 import static android.Manifest.permission.WRITE_CONTACTS;
 
-public class Setting extends AppCompatActivity {
+public class SettingActivity extends AppCompatActivity {
     private Context context;
     private static final int REQUEST_CONTACTS = 103;
     private SharedPreferences preferences;
@@ -54,7 +54,7 @@ public class Setting extends AppCompatActivity {
         saveHomeSetting(SOSHome);
         saveHelpSetting(SOSHelp);
         Intent intent =new Intent();
-        intent.setClass(Setting.this,MainActivity.class);
+        intent.setClass(SettingActivity.this,MainActivity.class);
         startActivity(intent);
         finish();
 

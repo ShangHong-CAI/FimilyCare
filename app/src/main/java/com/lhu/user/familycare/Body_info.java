@@ -18,8 +18,6 @@ private ImageView bg_bodyinfo,imghint,imglnquire,imgrecord,imginputValue;
         setContentView(R.layout.activity_body_info);
         context= this;
         findView();
-
-
     }
     public void findView(){
         bg_bodyinfo = (ImageView) findViewById(R.id.bg_bodyinfo);
@@ -49,7 +47,7 @@ private ImageView bg_bodyinfo,imghint,imglnquire,imgrecord,imginputValue;
                 break;
             //紀錄身體狀況
             case R.id.IMG_record:
-                intent.setClass(Body_info.this,BodySymptom.class);
+                intent.setClass(Body_info.this,BodySymptomActivity.class);
                 startActivity(intent);
                 break;
         }
