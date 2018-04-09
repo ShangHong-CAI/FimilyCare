@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "509044247979",
+    "firebase_url": "https://familycare-e349d.firebaseio.com",
+    "project_id": "familycare-e349d",
+    "storage_bucket": "familycare-e349d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509044247979:android:f7a6b7049644de97",
+        "android_client_info": {
+          "package_name": "com.lhu.user.familycare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509044247979-ahm8uvhdmgrli4i4148oaapceub7bj3j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lhu.user.familycare",
+            "certificate_hash": "b4bd3083b7f95a033175f89e25b5c87cf89237e3"
+          }
+        },
+        {
+          "client_id": "509044247979-j4odqomnf8ss4cf45aebvrf930h355bs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lhu.user.familycare",
+            "certificate_hash": "7f5a4dbfc6803d9135410a83a0ef156e7fcbc84b"
+          }
+        },
+        {
+          "client_id": "509044247979-qb5vvb8i7mrngmrm95ic60ojcvi0h22f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw6VIJ5eEjYo5Bahv4gxb2BB8Jc-33br4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509044247979-qb5vvb8i7mrngmrm95ic60ojcvi0h22f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
