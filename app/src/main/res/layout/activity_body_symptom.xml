@@ -25,7 +25,7 @@
         android:fontFamily="sans-serif-medium" />
 
     <ImageView
-        app:srcCompat="@drawable/body_man"
+        app:srcCompat="@drawable/body_woman2"
         android:layout_marginTop="38dp"
         android:id="@+id/IMG_body"
         android:layout_height="378dp"
@@ -46,122 +46,129 @@
         android:layout_above="@+id/btn_OK"
         android:textColor="@android:color/black" />
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:clickable="true"
+
+    <Button
+        android:background="#00000000"
         android:id="@+id/ear1"
-        android:layout_below="@+id/head"
-        android:layout_alignLeft="@+id/IMG_body"
-        android:layout_alignStart="@+id/IMG_body"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp" />
-
-    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/nose"
+        android:layout_alignBottom="@+id/nose"
+        android:layout_alignParentStart="true"
+        android:clickable="true"
+        android:onClick="onSymptomClick"
+        android:text="左耳" />
+
+    <Button
+        android:background="#00000000"
         android:id="@+id/ear2"
-        android:clickable="true"
-        android:layout_alignRight="@+id/IMG_body"
-        android:layout_alignEnd="@+id/IMG_body"
-        android:layout_alignTop="@+id/ear1" />
-
-    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/head"
+        android:layout_alignStart="@+id/neck"
+        android:layout_below="@+id/head"
         android:clickable="true"
-        android:layout_marginTop="46dp"
+        android:onClick="onSymptomClick"
+        android:text="右耳" />
+
+    <Button
+        android:background="#00000000"
+        android:id="@+id/head"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btn_OK"
         android:layout_alignTop="@+id/IMG_body"
+        android:clickable="true"
+        android:onClick="onSymptomClick"
+        android:text="頭" />
+
+    <Button
+        android:background="#00000000"
+        android:id="@+id/nose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/ear2"
         android:layout_alignStart="@+id/ear2"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/nose"
-        android:clickable="true"
         android:layout_below="@+id/ear2"
-        android:layout_alignLeft="@+id/ear2"
-        android:layout_alignStart="@+id/ear2" />
+        android:clickable="true"
+        android:onClick="onSymptomClick"
+        android:text="鼻子" />
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:background="#00000000"
         android:id="@+id/neck"
-        android:clickable="true"
-        android:layout_below="@+id/nose"
-        android:layout_alignRight="@+id/IMG_body"
-        android:layout_alignEnd="@+id/IMG_body" />
-
-    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/shoulder"
-        android:clickable="true"
+        android:layout_alignParentEnd="true"
         android:layout_below="@+id/nose"
-        android:layout_alignLeft="@+id/ear1"
-        android:layout_alignStart="@+id/ear1"
-        android:layout_marginTop="11dp" />
+        android:clickable="true"
+        android:onClick="onSymptomClick"
+        android:text="脖子" />
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <Button
+        android:background="#00000000"
         android:id="@+id/chest"
-        android:clickable="true"
-        android:layout_below="@+id/neck"
-        android:layout_centerHorizontal="true" />
-
-    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/head"
+        android:layout_below="@+id/ear1"
+        android:clickable="true"
+        android:onClick="onSymptomClick"
+        android:text="胸部" />
+
+    <Button
+        android:background="#00000000"
         android:id="@+id/Stomach"
-        android:clickable="true"
-        android:layout_below="@+id/chest"
-        android:layout_alignLeft="@+id/chest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignStart="@+id/chest"
-        android:layout_marginTop="11dp" />
+        android:layout_below="@+id/chest"
+        android:clickable="true"
+        android:onClick="onSymptomClick"
+        android:text="肚子" />
 
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Stomach"
+    <Button
+        android:background="#00000000"
         android:id="@+id/abdomen"
-        android:clickable="true"
-        android:layout_alignLeft="@+id/neck"
-        android:layout_alignStart="@+id/neck" />
-
-    <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/chest"
+        android:layout_alignStart="@+id/Stomach"
+        android:layout_below="@+id/Stomach"
         android:clickable="true"
-        android:layout_alignLeft="@+id/shoulder"
-        android:layout_alignStart="@+id/shoulder"
-        android:id="@+id/hand1" />
+        android:onClick="onSymptomClick"
+        android:text="腹部" />
 
-    <Spinner
+    <Button
+        android:background="#00000000"
+        android:id="@+id/hand1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/abdomen"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="11dp"
+        android:clickable="true"
+        android:onClick="onSymptomClick"
+        android:text="左手" />
+
+    <Button
+        android:background="#00000000"
         android:id="@+id/hand2"
-        android:clickable="true"
-        android:layout_below="@+id/chest"
-        android:layout_alignRight="@+id/IMG_body"
-        android:layout_alignEnd="@+id/IMG_body"
-        android:layout_marginRight="16dp"
-        android:layout_marginEnd="16dp" />
-
-    <Spinner
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:id="@+id/leg"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/neck"
         android:clickable="true"
-        android:layout_above="@+id/TXTV_choose"
-        android:layout_toStartOf="@+id/abdomen"
-        android:layout_toLeftOf="@+id/abdomen"
-        android:layout_width="180dp" />
+        android:onClick="onSymptomClick"
+        android:text="右手" />
 
+    <Button
+        android:background="#00000000"
+        android:id="@+id/leg"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/TXTV_choose"
+        android:layout_marginBottom="15dp"
+        android:layout_toEndOf="@+id/hand1"
+        android:clickable="true"
+        android:onClick="onSymptomClick"
+        android:text="腳" />
 </RelativeLayout>

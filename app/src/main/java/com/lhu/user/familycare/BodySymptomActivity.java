@@ -3,6 +3,7 @@ package com.lhu.user.familycare;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.lhu.user.familycare.tool.IMGtool;
@@ -26,5 +27,11 @@ public class BodySymptomActivity extends AppCompatActivity {
         bg_bodysymptom = (ImageView) findViewById(R.id.bg_bodysymptom);
         bg_bodysymptom.setImageBitmap(IMGtool.readBitMap(context,R.drawable.body_symptom));
 //        Picasso.with(context).load(R.drawable.body_symptom).into(bg_bodysymptom);
+    }
+    public void onSymptomClick(View view){
+        switch (view.getId()){
+            case R.id.leg:
+
+        }
     }
 }
