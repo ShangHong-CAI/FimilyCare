@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.lhu.user.familycare.db.BodyStatus;
 import com.lhu.user.familycare.db.BodyStatusDAO;
@@ -43,15 +44,23 @@ public class Body_inputValue extends Activity  {
             @Override
             public void onClick(View view) {
                 float bloodsugar,heartbeat,diastolicBloodPressure,systolicBloodPressure;
-                bloodsugar =Float.parseFloat(bloodsugar_editText.getText().toString());
-                heartbeat =Float.parseFloat(heartbeat_editText.getText().toString());
-                diastolicBloodPressure =Float.parseFloat(diastolicBloodPressure_editText.getText().toString());
-                systolicBloodPressure =Float.parseFloat(systolicBloodPressure_editText.getText().toString());
-                insert(heartbeat,systolicBloodPressure,diastolicBloodPressure,bloodsugar);
-                Intent intent = new Intent();
-                intent.setClass(Body_inputValue.this, Body_info.class);
-                startActivity(intent);
-                finish();
+
+                if(bloodsugar_editText.getText().length()!=0 &&
+                   heartbeat_editText.getText().length()!=0 &&
+                   diastolicBloodPressure_editText.getText().length()!=0 &&
+                   systolicBloodPressure_editText.getText().length()!=0) {
+                    bloodsugar = Float.parseFloat(bloodsugar_editText.getText().toString());
+                    heartbeat = Float.parseFloat(heartbeat_editText.getText().toString());
+                    diastolicBloodPressure = Float.parseFloat(diastolicBloodPressure_editText.getText().toString());
+                    systolicBloodPressure = Float.parseFloat(systolicBloodPressure_editText.getText().toString());
+                    insert(heartbeat, systolicBloodPressure, diastolicBloodPressure, bloodsugar);
+                    Intent intent = new Intent();
+                    intent.setClass(Body_inputValue.this, Body_info.class);
+                    startActivity(intent);
+                    finish();
+                }else {
+                    Toast.makeText(context,"輸入有誤",Toast.LENGTH_LONG).show();
+                }
             }
         });
 //        ImageView bg_inputValue = (ImageView) findViewById(R.id.bg_inputValue);

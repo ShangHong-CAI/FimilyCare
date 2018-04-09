@@ -1,12 +1,12 @@
 package com.lhu.user.familycare;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -29,7 +29,7 @@ import java.net.URL;
 import okhttp3.OkHttpClient;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends Activity {
     private static final String TAG = "EmailPassword";
     private Context context;
     private EditText ET_account, ET_password;
@@ -219,7 +219,7 @@ public class LoginActivity extends AppCompatActivity {
             super.run();
             URL url = null;
             try {
-//                String URLSTR = String.format("http://140.131.7.63//family_care/callback/login_check.aspx?M_Password=%s&M_ID=%s",password,account);
+//                String URLSTR = String.format("http://140.131.7.72:8080//family_care/callback/login_check.aspx?M_Password=%s&M_ID=%s",password,account);
 //                url = new URL(URLSTR);
 //                // 替換成 OkHttp 2.0 ---------------------------------------
 //                Request request = new Request.Builder().url(url).build();

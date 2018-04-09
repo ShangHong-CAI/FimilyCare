@@ -45,7 +45,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:srcCompat="@drawable/weather_sunny"
+        android:src="@drawable/weather_sunny"
         android:id="@+id/IMG_W_Now"
         android:layout_marginTop="24dp"
         android:layout_below="@+id/TXTV_time"
@@ -68,7 +68,7 @@
         android:textColor="@android:color/black" />
 
     <ImageView
-        app:srcCompat="@drawable/weather_partly_cloudy"
+        android:src="@drawable/weather_partly_cloudy"
         android:id="@+id/IMG_W_time1"
         android:layout_marginBottom="49dp"
         android:layout_width="60dp"
@@ -80,7 +80,7 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        app:srcCompat="@drawable/weather_cloudy"
+        android:src="@drawable/weather_cloudy"
         android:layout_alignTop="@+id/IMG_W_time1"
         android:layout_centerHorizontal="true"
         android:id="@+id/IMG_W_time2" />
@@ -88,7 +88,7 @@
     <ImageView
         android:layout_width="60dp"
         android:layout_height="60dp"
-        app:srcCompat="@drawable/weather_rain"
+        android:src="@drawable/weather_rain"
         android:layout_alignTop="@+id/IMG_W_time2"
         android:layout_alignRight="@+id/IMG_W_Now"
         android:layout_alignEnd="@+id/IMG_W_Now"

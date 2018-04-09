@@ -13,7 +13,7 @@ public class BodySymptomActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_body_symptom);
+        setContentView(R.layout.activity_body_symptom2);
         /*
         * 1.如果性別為女生，要把人體圖換掉
         * 2.已選擇的症狀會出現在畫面下方
