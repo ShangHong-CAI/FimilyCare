@@ -57,7 +57,7 @@ public class WeatherActivity extends AppCompatActivity {
         context = this;
         findView();
         mLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-//        getCurrentLocation();
+        getCurrentLocation();
         new RunWork().start();
         /*
         * 1.將天氣資料下載
@@ -130,7 +130,7 @@ public class WeatherActivity extends AppCompatActivity {
             boolean isNetworkEnabled = mLocationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
             Location location = null;
             if (checkSelfPermission(ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{ACCESS_FINE_LOCATION}, 101);
+                requestPermissions(new String[]{ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION}, 101);
                 Toast.makeText(this, "error1", Toast.LENGTH_SHORT).show();
                 return;
             }
@@ -160,6 +160,8 @@ public class WeatherActivity extends AppCompatActivity {
 
             }
         }catch (Exception e){
+            System.err.println("wTool.getWeatherStr fail:"+e.getLocalizedMessage());
+            e.printStackTrace();
 //            finish();
         }
     }
@@ -271,6 +273,7 @@ public class WeatherActivity extends AppCompatActivity {
             try {
                 city = wTool.getWeatherStr(i[0],i[1]);
             } catch (IOException e) {
+                System.err.println("wTool.getWeatherStr fail:"+e.getLocalizedMessage());
                 e.printStackTrace();
             }
             runOnUiThread(runnable);
@@ -291,7 +294,6 @@ public class WeatherActivity extends AppCompatActivity {
         };
         @Override
         public void run() {
-            getCurrentLocation();
             runOnUiThread(runnable);
         }
     }

@@ -68,9 +68,12 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     public void checkPermission() {
-        int permission = ActivityCompat.checkSelfPermission(this,
+        int permission1 = ActivityCompat.checkSelfPermission(this,
                 READ_CONTACTS);
-        if (permission != PackageManager.PERMISSION_GRANTED) {
+        int permission2 = ActivityCompat.checkSelfPermission(this,
+                WRITE_CONTACTS);
+        if (permission1 != PackageManager.PERMISSION_GRANTED ||
+            permission2 != PackageManager.PERMISSION_GRANTED) {
             //未取得權限，向使用者要求允許權限
             ActivityCompat.requestPermissions(this,
                     new String[]{READ_CONTACTS, WRITE_CONTACTS},

@@ -4,4 +4,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="PREF_NAME">MyApp</string>
+    <string name="neck">脖子</string>
+    <string name="nose">鼻子</string>
+    <string name="head">頭</string>
+    <string name="ear2">右耳</string>
+    <string name="ear1">左耳</string>
+    <string name="chest">胸部</string>
+    <string name="stomach">肚子</string>
+    <string name="abdomen">腹部</string>
+    <string name="hand1">左手</string>
+    <string name="hand2">右手</string>
+    <string name="leg">腳</string>
 </resources>
