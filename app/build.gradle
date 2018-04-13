@@ -7,6 +7,7 @@ android {
         applicationId "com.lhu.user.familycare"
         minSdkVersion 23
         targetSdkVersion 27
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -28,6 +29,7 @@ allprojects {
 }
 dependencies {
     implementation 'com.google.firebase:firebase-auth:12.0.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -38,6 +40,8 @@ dependencies {
     compile 'org.jsoup:jsoup:1.10.2+'
     compile 'co.roverlabs:picasso:2.5.2+'
     compile 'com.google.android.gms:play-services:12.0.1'
+    compile 'com.google.maps:google-maps-services:0.2.6'
+    compile 'org.slf4j:slf4j-nop:1.7.25'
 }
 buildscript {
     repositories {
